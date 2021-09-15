@@ -1,0 +1,49 @@
+1. Write a program which will find all such numbers which are divisible by 7 but are not a
+multiple of 5, between 2000 and 3200 (both included). The numbers obtained should be printed 
+in a comma-separated sequence on a single line.
+
+INPUT
+
+#Assignment Q.no1
+a = list(range(2000,3201))
+m = []
+for i in a:
+#     print(i)
+    if i % 7 == True and i % 5 == False:
+         m.append(i)
+print(m)
+
+OUTPUT
+
+[2010, 2045, 2080, 2115, 2150, 2185, 2220, 2255, 2290, 2325, 2360, 2395, 2430, 2465, 2500, 2535, 2570, 2605, 2640, 2675, 2710, 2745, 2780, 2815, 2850, 2885, 2920, 2955, 2990, 3025, 3060, 3095, 3130, 3165, 3200]
+
+2. Write a Python program to accept the user's first and last name and then getting them
+printed in the the reverse order with a space between first name and last name.
+
+INPUT
+# Assignment Q.no2
+#2.
+a = input("Enter First Name: ")
+b = input("Enter Last Name: ")
+print(a[::-1],b[::-1])
+
+OUTPUT
+
+Enter First Name: Himanshu
+Enter Last Name: Sharma
+uhsnamiH amrahS
+
+3. Write a Python program to find the volume of a sphere with diameter 12 cm.Formula: V=4/3 * π * r 3
+
+INPUT
+
+#Assignment Q.no3
+pi = 3.14
+diameter = int(input("Enter the diameter: "))
+radius = float(diameter/2)
+volume = 4/3 * pi * radius ** 3
+print("The volume of sphere with given diameter is {}".format(volume) )
+
+OUTPUT
+Enter the diameter: 12
+The volume of sphere with given diameter is 904.3199999999999
