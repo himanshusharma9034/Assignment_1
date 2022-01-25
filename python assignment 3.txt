@@ -1,0 +1,80 @@
+1.1 Write a Python Program to implement your own myreduce() function which works exactly
+  like Python's built-in function reduce()
+
+ANS:
+def myreduce(f,*args):
+    if len(args) == 0:
+        return None
+    result = args[0]
+    for i in range(1,len(args)):
+        result = f(result,args[i])
+    return result
+given_lst =[123,93,45,76]
+
+print(myreduce(lambda x,y: x+y,*given_lst))
+
+
+
+
+
+1.2 Write a Python program to implement your own myfilter() function which works exactly
+like Python's built-in function filter()
+
+ANS:
+def check_filter(n):
+    if n % 2 == 0:
+        return False
+    else:
+        return True
+
+list_1=[1,2,3,4,5,6,7,8,9,10]
+list_3=[]
+def my_filter(check_filter,list_1):
+    for i in list_1:
+        if i%2==0:
+            list_3.append(i)
+    return(list_3)
+my_filter(check_filter,list_1)
+
+
+
+
+
+2. Implement List comprehensions to produce the following lists.
+Write List comprehensions to produce the following Lists
+
+
+['x', 'xx', 'xxx', 'xxxx', 'y', 'yy', 'yyy', 'yyyy', 'z', 'zz', 'zzz', 'zzzz']
+ANS:
+[k for j in [[i, i*2, i*3, i*4] for i in ['x','y','z']] for k in j ] 
+
+
+
+['x', 'y', 'z', 'xx', 'yy', 'zz', 'xxx', 'yyy', 'zzz', 'xxxx', 'yyyy', 'zzzz']
+
+ANS:
+[i for i in ['x','y','z']]+[i*2 for i in ['x','y','z']] +[i*3 for i in ['x','y','z']] + [i*4 for i in ['x','y','z']]
+
+
+
+[[2], [3], [4], [3], [4], [5], [4], [5], [6]] [[2, 3, 4, 5], [3, 4, 5, 6],
+[4, 5, 6, 7], [5, 6, 7, 8]]
+ANS:
+l = []
+for i in range(2,5):
+    l.append([i])
+    for j in range(i,i+3):
+        if i == j:
+            continue
+        else:
+            l.append([j])
+l1 =[]
+for i in range(2,6):
+    l1.append([i,i+1,i+2,i+3])
+print(l + l1,end="")
+
+
+
+[(1, 1), (2, 1), (3, 1), (1, 2), (2, 2), (3, 2), (1, 3), (2, 3), (3, 3)]
+ANS:
+[(i,j) for i in range(1,4) for j in range(1,4)]
